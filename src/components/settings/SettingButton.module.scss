@@ -1,0 +1,13 @@
+@use "../../styles/variables" as *;
+
+.settingButton {
+  position: fixed;
+  right: 2rem;
+  bottom: 3rem;
+  z-index: $z-index-sidebar;
+  transition: 0.3s;
+
+  &:hover {
+    transform: rotate(45deg);
+  }
+}

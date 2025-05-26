@@ -1,0 +1,47 @@
+@use "../../../styles/variables" as *;
+
+.horizontalMenu {
+  padding: 0 5rem;
+  border-top: 1px solid $color-gray-200;
+}
+
+.dep1Ul {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 5rem;
+}
+
+.dep1Li {
+  position: relative;
+}
+
+.dep1A {
+  display: flex;
+  align-items: center;
+  height: 4.4rem;
+
+  img {
+    margin-right: 5px;
+  }
+}
+
+.dep2Ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 15rem;
+  padding: 1.2rem 0;
+  background-color: $color-white;
+  border: 1px solid $color-gray-200;
+  border-radius: $border-radius-small;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dep2A {
+  display: block;
+  padding: 0.8rem 2rem;
+
+  img {
+    display: none;
+  }
+}

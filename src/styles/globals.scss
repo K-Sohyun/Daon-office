@@ -1,0 +1,88 @@
+@use "./variables" as *;
+
+/* ===========================
+  Reset CSS
+=========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-base;
+  font-size: $fs-body-100;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: $font-base;
+  font-size: inherit;
+}
+
+input {
+  height: 4rem;
+  background-color: $color-gray-100;
+  border: 1px solid $color-gray-200;
+  border-radius: $border-radius-small;
+  padding: 0 2rem;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+/* ===========================
+  공통 CSS
+=========================== */
+
+.ellipsis {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}

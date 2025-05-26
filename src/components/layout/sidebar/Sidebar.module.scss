@@ -1,0 +1,181 @@
+@use "../../../styles/variables" as *;
+
+// Sidebar 공통
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-index-sidebar;
+  height: 100vh;
+  background: $color-primary-100;
+  padding: 5rem 2rem;
+
+  * {
+    color: $color-white;
+  }
+
+  nav img {
+    filter: brightness(0) invert(1);
+  }
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+// Vertical Type
+.verticalMenu {
+  .dep1Li {
+    margin-bottom: 2rem;
+  }
+
+  .dep1A {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 1rem;
+    }
+
+    span {
+      font-size: $fs-body-200;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .dep2Ul {
+    margin-top: 1rem;
+    opacity: 0.8;
+  }
+
+  .dep2Li {
+    margin-top: 5px;
+  }
+
+  .dep2A {
+    img {
+      display: none;
+    }
+
+    span {
+      display: block;
+      position: relative;
+      padding-left: 3.4rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        width: 8px;
+        height: 2px;
+        background: $color-white;
+      }
+    }
+  }
+}
+
+// Two Column Type
+.TwoColumnMenu {
+  display: flex;
+
+  .logo {
+    display: block;
+    margin-bottom: 3rem;
+  }
+}
+
+.colLeft {
+  width: 7rem;
+  height: 100vh;
+  padding: 5rem 2rem;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+  .dep1Li {
+    margin-bottom: 3.5rem;
+  }
+}
+
+.colRight {
+  width: calc(100% - 7rem);
+  height: 100vh;
+  padding: 5rem 2rem;
+
+  .dep1Li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 8px;
+      height: 2px;
+      background: $color-white;
+    }
+  }
+
+  .dep1A {
+    display: block;
+    font-size: $fs-body-200;
+    font-weight: 500;
+  }
+
+  .dep2Ul {
+    opacity: 0.8;
+
+    .dep2Li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-top: 1rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 0;
+        width: 4px;
+        height: 4px;
+        background: $color-white;
+        border-radius: $border-radius-circle;
+      }
+    }
+
+    .dep2A {
+      display: block;
+    }
+  }
+}
+
+// Icons Type
+.iconMenu {
+  .dep1Li {
+    position: relative;
+    margin-bottom: 3.5rem;
+  }
+
+  .dep2Ul {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 2rem);
+    width: 14rem;
+    background: $color-primary-100;
+  }
+
+  .dep2A {
+    display: block;
+    padding: 1.2rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+
+    img {
+      display: none;
+    }
+  }
+}

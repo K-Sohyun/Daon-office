@@ -1,3 +1,42 @@
+@use "../styles/variables" as *;
+
 .container {
   position: relative;
+}
+
+.dashboardGrid {
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, minmax(calc(33vh - 6.6rem), auto));
+  grid-template-areas:
+    "chartBar chartBar map"
+    "table table chartPie"
+    "totalCard activeCard chartPie";
+  padding: 3rem 5rem;
+
+  & > div {
+    background: $color-gray-100;
+    padding: 2rem;
+    font-size: 0;
+  }
+
+  .chartBar {
+    grid-area: chartBar;
+  }
+  .map {
+    grid-area: map;
+  }
+  .table {
+    grid-area: table;
+  }
+  .chartPie {
+    grid-area: chartPie;
+  }
+  .totalCard {
+    grid-area: totalCard;
+  }
+  .activeCard {
+    grid-area: activeCard;
+  }
 }

@@ -9,6 +9,14 @@ export default function Home() {
       <Sidebar />
       <Topbar />
       <SettingButton />
+      <div className={styles.dashboardGrid}>
+        <div className={styles.chartBar}>Bar Chart</div>
+        <div className={styles.map}>Map</div>
+        <div className={styles.table}>Table</div>
+        <div className={styles.chartPie}>Chart Pie</div>
+        <div className={styles.totalCard}>Total Customers</div>
+        <div className={styles.activeCard}>Active Customers</div>
+      </div>
     </div>
   );
 }

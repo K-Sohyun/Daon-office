@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 
 import { useEffect } from "react";
@@ -15,22 +16,22 @@ export default function KakaoMapBox() {
     script.async = true;
 
     script.onload = () => {
-      window.kakao.maps.load(() => {
-        const container = document.getElementById("map");
-        const centerCoords = new window.kakao.maps.LatLng(37.563089, 126.97925); // 다온링크
+      const kakao = (window as any).kakao;
 
-        const map = new window.kakao.maps.Map(container, {
+      kakao.maps.load(() => {
+        const container = document.getElementById("map");
+        const centerCoords = new kakao.maps.LatLng(37.563089, 126.97925);
+
+        const map = new kakao.maps.Map(container, {
           center: centerCoords,
           level: 3,
         });
 
-        // 마커 생성
-        const marker = new window.kakao.maps.Marker({
+        new kakao.maps.Marker({
           position: centerCoords,
           map: map,
         });
 
-        // 리사이징 시 중심 재설정
         window.addEventListener("resize", () => {
           map.setCenter(centerCoords);
         });

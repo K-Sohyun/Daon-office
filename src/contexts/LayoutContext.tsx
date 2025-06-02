@@ -23,6 +23,7 @@ export function LayoutProvider({ children }: { children: ReactNode }) {
 
 export function useLayout() {
   const context = useContext(LayoutContext);
-  if (!context) throw new Error("useLayout must be used within LayoutProvider");
+  if (!context)
+    throw new Error("useLayout은 LayoutProvider 내에서 사용해야 합니다.");
   return context;
 }

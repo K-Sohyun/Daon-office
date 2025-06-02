@@ -8,7 +8,7 @@
   display: grid;
   gap: 4rem;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, minmax(calc(33vh - 6.6rem), auto));
+  grid-template-rows: repeat(3, minmax(10rem, auto));
   grid-template-areas:
     "chartBar chartBar map"
     "table table chartPie"
@@ -18,14 +18,16 @@
   & > div {
     background: $color-gray-100;
     padding: 2rem;
-    font-size: 0;
   }
 
   .chartBar {
     grid-area: chartBar;
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
   .map {
     grid-area: map;
+    padding: 0;
   }
   .table {
     grid-area: table;

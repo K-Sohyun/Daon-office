@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import ChartWrapper from "./ChartWrapper";
 
 interface DataItem {
@@ -39,6 +40,13 @@ export default function BarChart({
   stepSize = 20,
   barGap = 30,
 }: BarChartProps) {
+  const [animated, setAnimated] = useState(false); // 막대 애니메이션
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setAnimated(true), 50);
+    return () => clearTimeout(timeout);
+  }, []);
+
   const padding = 30;
   const chartWidth = width - padding * 2;
 
@@ -96,16 +104,20 @@ export default function BarChart({
       {data.map((d, i) => {
         const barHeight = (d.value / maxValue) * (height - padding * 2);
         const x = padding + i * (barWidth + barGap);
-        const y = height - padding - barHeight;
+        const y = animated ? height - padding - barHeight : height - padding;
+        const animatedHeight = animated ? barHeight : 0;
 
         return (
-          <g key={i}>
+          <g key={`bar-${i}`}>
             <rect
               x={x}
               y={y}
               width={barWidth}
-              height={barHeight}
+              height={animatedHeight}
               fill="#4E95FD"
+              style={{
+                transition: "all 0.6s ease-out",
+              }}
             />
             <text
               x={x + barWidth / 2}

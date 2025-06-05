@@ -1,9 +1,9 @@
 import Sidebar from "@/components/layout/sidebar/Sidebar";
 import Topbar from "@/components/layout/topbar/Topbar";
 import SettingButton from "@/components/settings/SettingButton";
-import BarChart from "@/components/chart/BarChart";
+import BarChart from "@/components/chart/barChart/BarChart";
 import MapView from "@/components/chart/MapView";
-import DataTable from "@/components/chart/DataTable";
+import DataTable from "@/components/table/DataTable";
 import styles from "./Home.module.scss";
 
 // 테이블 샘플 데이터
@@ -62,8 +62,8 @@ export default function Home() {
           <DataTable data={tableData} />
         </div>
         <div className={styles.chartPie}>Chart Pie</div>
-        <div className={styles.totalCard}>Total Customers</div>
-        <div className={styles.activeCard}>Active Customers</div>
+        <div className={styles.totalCard}>Total</div>
+        <div className={styles.activeCard}>Active</div>
       </div>
     </div>
   );

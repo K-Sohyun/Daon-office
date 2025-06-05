@@ -1,0 +1,41 @@
+@use "../../../styles/variables" as *;
+
+.chartWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.bar {
+  fill: #fac858;
+  transition: all 1s ease-out;
+  cursor: pointer;
+}
+
+.label {
+  font-size: 0.9rem;
+  fill: $color-gray-300;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: $color-white;
+  font-size: $fs-body-100;
+  padding: 8px 14px;
+  border-radius: $border-radius-small;
+  border: 1px solid #fac858;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: $z-index-content;
+  transform: translate(-50%, -120%);
+  opacity: 0;
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

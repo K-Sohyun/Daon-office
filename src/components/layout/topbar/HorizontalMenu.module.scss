@@ -1,7 +1,6 @@
 @use "../../../styles/variables" as *;
 
 .horizontalMenu {
-  padding: 0 5rem;
   border-top: 1px solid $color-gray-200;
 }
 
@@ -9,6 +8,9 @@
   display: flex;
   align-items: flex-start;
   column-gap: 5rem;
+  max-width: 160rem;
+  margin: 0 auto;
+  padding: 0 5rem;
 }
 
 .dep1Li {

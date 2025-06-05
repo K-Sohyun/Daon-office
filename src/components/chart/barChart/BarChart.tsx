@@ -17,6 +17,7 @@ interface BarChartProps {
   fixedMaxValue?: number | null;
   stepSize?: number;
   barGap?: number;
+  drawLine?: boolean; // 선 표시 여부
 }
 
 // 임시 데이터
@@ -42,6 +43,7 @@ export default function BarChart({
   fixedMaxValue = null,
   stepSize = 20,
   barGap = 30,
+  drawLine = false,
 }: BarChartProps) {
   // 차트 애니메이션
   const [animated, setAnimated] = useState(false);
@@ -168,8 +170,24 @@ export default function BarChart({
             </g>
           );
         })}
+
+        {/* 선: 막대 꼭대기 연결 */}
+        {drawLine && (
+          <polyline
+            className={styles.line}
+            points={data
+              .map((d, i) => {
+                const barHeight = (d.value / maxValue) * (height - padding * 2);
+                const x = padding + i * (barWidth + barGap) + barWidth / 2;
+                const y = height - padding - barHeight;
+                return `${x},${y}`;
+              })
+              .join(" ")}
+          />
+        )}
       </ChartWrapper>
-      {/* 툴팁 DOM */}
+
+      {/* 툴팁 */}
       {tooltip && (
         <div
           className={styles.tooltip}

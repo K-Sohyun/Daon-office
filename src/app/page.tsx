@@ -53,7 +53,12 @@ export default function Home() {
       <SettingButton />
       <div className={styles.dashboardGrid}>
         <div className={styles.chartBar}>
-          <BarChart fixedMaxValue={100} stepSize={20} barGap={30} />
+          <BarChart
+            fixedMaxValue={100}
+            stepSize={20}
+            barGap={30}
+            drawLine={true}
+          />
         </div>
         <div className={styles.map}>
           <MapView />

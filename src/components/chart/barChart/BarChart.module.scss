@@ -7,6 +7,15 @@
   margin: 0 auto;
 }
 
+.line {
+  fill: none;
+  stroke: #ff9950;
+  stroke-width: 2px;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 1.2s 1.2s ease-out forwards;
+}
+
 .bar {
   fill: #fac858;
   transition: all 1s ease-out;
@@ -32,6 +41,12 @@
   transform: translate(-50%, -120%);
   opacity: 0;
   animation: fadeIn 0.2s ease-out forwards;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes fadeIn {

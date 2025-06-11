@@ -53,6 +53,9 @@ export default function Home() {
       <SettingButton />
       <div className={styles.dashboardGrid}>
         <div className={styles.chartBar}>
+          <div className={styles.mainTitle}>
+            <h2>Bar Chart Example</h2>
+          </div>
           <BarChart
             fixedMaxValue={100}
             stepSize={20}
@@ -61,14 +64,32 @@ export default function Home() {
           />
         </div>
         <div className={styles.map}>
+          <div className={styles.mainTitle}>
+            <h2>Map Example</h2>
+          </div>
           <MapView />
         </div>
         <div className={styles.table}>
+          <div className={styles.mainTitle}>
+            <h2>Table Example</h2>
+          </div>
           <DataTable data={tableData} />
         </div>
-        <div className={styles.chartPie}>Chart Pie</div>
-        <div className={styles.totalCard}>Total</div>
-        <div className={styles.activeCard}>Active</div>
+        <div className={styles.chartPie}>
+          <div className={styles.mainTitle}>
+            <h2>Pie Chart Example</h2>
+          </div>
+        </div>
+        <div className={styles.totalCard}>
+          <div className={styles.mainTitle}>
+            <h2>Total Example</h2>
+          </div>
+        </div>
+        <div className={styles.activeCard}>
+          <div className={styles.mainTitle}>
+            <h2>Active Example</h2>
+          </div>
+        </div>
       </div>
     </div>
   );

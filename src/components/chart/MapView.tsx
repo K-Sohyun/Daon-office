@@ -41,5 +41,7 @@ export default function KakaoMapBox() {
     document.head.appendChild(script);
   }, []);
 
-  return <div id="map" style={{ width: "100%", height: "100%" }} />;
+  return (
+    <div id="map" style={{ width: "100%", height: "calc(100% - 6rem)" }} />
+  );
 }

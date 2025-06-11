@@ -102,7 +102,7 @@ export default function BarChart({
                 y1={y}
                 y2={y}
                 stroke="#ccc"
-                strokeDasharray="2 2"
+                strokeWidth={0.4}
               />
               <text
                 x={padding - 10}
@@ -173,17 +173,37 @@ export default function BarChart({
 
         {/* 선: 막대 꼭대기 연결 */}
         {drawLine && (
-          <polyline
-            className={styles.line}
-            points={data
-              .map((d, i) => {
-                const barHeight = (d.value / maxValue) * (height - padding * 2);
-                const x = padding + i * (barWidth + barGap) + barWidth / 2;
-                const y = height - padding - barHeight;
-                return `${x},${y}`;
-              })
-              .join(" ")}
-          />
+          <>
+            <polyline
+              className={styles.line}
+              points={data
+                .map((d, i) => {
+                  const barHeight =
+                    (d.value / maxValue) * (height - padding * 2);
+                  const x = padding + i * (barWidth + barGap) + barWidth / 2;
+                  const y = height - padding - barHeight;
+                  return `${x},${y}`;
+                })
+                .join(" ")}
+            />
+
+            {/* 꼭짓점 점(circle) 추가 */}
+            {data.map((d, i) => {
+              const barHeight = (d.value / maxValue) * (height - padding * 2);
+              const cx = padding + i * (barWidth + barGap) + barWidth / 2;
+              const cy = height - padding - barHeight;
+
+              return (
+                <circle
+                  className={styles.dot}
+                  key={`dot-${i}`}
+                  cx={cx}
+                  cy={cy}
+                  r={2}
+                />
+              );
+            })}
+          </>
         )}
       </ChartWrapper>
 

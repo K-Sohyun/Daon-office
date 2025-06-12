@@ -2,6 +2,7 @@ import Sidebar from "@/components/layout/sidebar/Sidebar";
 import Topbar from "@/components/layout/topbar/Topbar";
 import SettingButton from "@/components/settings/SettingButton";
 import BarChart from "@/components/chart/barChart/BarChart";
+import PieChart from "@/components/chart/pieChart/PieChart";
 import MapView from "@/components/chart/MapView";
 import DataTable from "@/components/table/DataTable";
 import styles from "./Home.module.scss";
@@ -45,6 +46,13 @@ const tableData = [
   },
 ];
 
+// 파이차트 샘플 데이터
+const pieData = [
+  { label: "A", value: 30, color: "#ffcd56" },
+  { label: "B", value: 20, color: "#36a2eb" },
+  { label: "C", value: 50, color: "#ff6384" },
+];
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -79,6 +87,7 @@ export default function Home() {
           <div className={styles.mainTitle}>
             <h2>Pie Chart Example</h2>
           </div>
+          <PieChart data={pieData} />
         </div>
         <div className={styles.totalCard}>
           <div className={styles.mainTitle}>
